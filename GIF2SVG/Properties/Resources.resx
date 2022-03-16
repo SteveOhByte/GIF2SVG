@@ -127,4 +127,49 @@
   <data name="ffprobe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ffprobe.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Main_Start_GIF_2_SVG_Converter" xml:space="preserve">
+    <value>########## GIF 2 SVG Converter ##########</value>
+  </data>
+  <data name="Main_Start_Select_an_option" xml:space="preserve">
+    <value>Select an option</value>
+  </data>
+  <data name="Main_Start_Enter_the_absolute_path_of_your_gif_file" xml:space="preserve">
+    <value>Enter the absolute path of your .gif file</value>
+  </data>
+  <data name="Main_Start_Enter_the_absolute_path_the_output_svg_file" xml:space="preserve">
+    <value>Enter the absolute path the output .svg file</value>
+  </data>
+  <data name="Main_Start_Enter_the_absolute_path_of_the_directory_your_gif_files_are_stored_in" xml:space="preserve">
+    <value>Enter the absolute path of the directory your .gif files are stored in</value>
+  </data>
+  <data name="Main_Start_No_gif_files_detected_in_provided_directory_try_again" xml:space="preserve">
+    <value>No .gif files detected in provided directory, try again</value>
+  </data>
+  <data name="Main_Start_Enter_the_absolute_path_of_the_directory_your_svg_files_will_be_stored_in" xml:space="preserve">
+    <value>Enter the absolute path of the directory your .svg files will be stored in</value>
+  </data>
+  <data name="Main_Start_Error_Provided_path_was_null_the_program_will_now_exit_" xml:space="preserve">
+    <value>Error: Provided path was null, the program will now exit.</value>
+  </data>
+  <data name="Main_Start_Single_gif_conversion" xml:space="preserve">
+    <value>Single gif conversion</value>
+  </data>
+  <data name="Main_Start_Multiple_gifs_conversion" xml:space="preserve">
+    <value>Multiple gifs conversion</value>
+  </data>
+  <data name="Converter_Converter_Converting" xml:space="preserve">
+    <value>Converting...</value>
+  </data>
+  <data name="Converter_Convert_Getting_data" xml:space="preserve">
+    <value>Getting data...</value>
+  </data>
+  <data name="Converter_ExtractFramesAsync_Extracting_frames" xml:space="preserve">
+    <value>Extracting frames...</value>
+  </data>
+  <data name="Converter_BuildSVG_Building_SVG" xml:space="preserve">
+    <value>Building SVG...</value>
+  </data>
+  <data name="Converter_Cleanup_Conversion_Complete" xml:space="preserve">
+    <value>Conversion Complete!</value>
+  </data>
 </root>

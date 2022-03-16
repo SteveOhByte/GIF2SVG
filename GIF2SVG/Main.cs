@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GIF2SVG.Properties;
 
 namespace GIF2SVG
 {
@@ -12,7 +8,7 @@ namespace GIF2SVG
 
         private void Start()
         {
-            string[] options = new string[] { "Single gif conversion", "Multiple gifs conversion" };
+            string[] options = { Resources.Main_Start_Single_gif_conversion, Resources.Main_Start_Multiple_gifs_conversion };
 
             int currentSelection = 0;
 
@@ -23,18 +19,18 @@ namespace GIF2SVG
             do
             {
                 Console.Clear();
-                Console.WriteLine("########## GIF 2 SVG Converter ##########");
-                Console.WriteLine("Select an option");
+                Console.WriteLine(Resources.Main_Start_GIF_2_SVG_Converter);
+                Console.WriteLine(Resources.Main_Start_Select_an_option);
 
                 if (currentSelection == 0)
                 {
-                    Console.WriteLine("> " + options[0]);
+                    Console.WriteLine(@"> " + options[0]);
                     Console.WriteLine(options[1]);
                 }
                 else
                 {
                     Console.WriteLine(options[0]);
-                    Console.WriteLine("> " + options[1]);
+                    Console.WriteLine(@"> " + options[1]);
                 }
 
                 key = Console.ReadKey(true).Key;
@@ -47,55 +43,82 @@ namespace GIF2SVG
             Console.CursorVisible = true;
 
             Console.Clear();
-            Console.WriteLine("########## GIF 2 SVG Converter ##########");
+            Console.WriteLine(Resources.Main_Start_GIF_2_SVG_Converter);
 
             if (currentSelection == 0)
             {
-                Console.WriteLine("Enter the absolute path of your .gif file");
+                Console.WriteLine(Resources.Main_Start_Enter_the_absolute_path_of_your_gif_file);
                 string? pathToGif = Console.ReadLine();
-                
-                Console.Clear();
-                Console.WriteLine("########## GIF 2 SVG Converter ##########");
-                Console.WriteLine("Enter the absolute path the output .svg file");
-                string? pathToSvg = Console.ReadLine();
 
-                new Converter(pathToGif, pathToSvg);
+                if (pathToGif != null)
+                {
+                    Console.Clear();
+                    Console.WriteLine(Resources.Main_Start_GIF_2_SVG_Converter);
+                    Console.WriteLine(Resources.Main_Start_Enter_the_absolute_path_the_output_svg_file);
+                    string? pathToSvg = Console.ReadLine();
+
+                    if (pathToSvg != null)
+                    {
+                        new Converter(pathToGif, pathToSvg);
+                    }
+                    else
+                    {
+                        Console.WriteLine(Resources.Main_Start_Error_Provided_path_was_null_the_program_will_now_exit_);
+                        Console.ReadKey();
+                        Environment.Exit(1);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine(Resources.Main_Start_Error_Provided_path_was_null_the_program_will_now_exit_);
+                    Console.ReadKey();
+                    Environment.Exit(1);
+                }
             }
             else
             {
-                Console.WriteLine("Enter the absolute path of the directory your .gif files are stored in");
+                Console.WriteLine(Resources.Main_Start_Enter_the_absolute_path_of_the_directory_your_gif_files_are_stored_in);
                 string? pathToGifFiles = Console.ReadLine();
 
-                List<string> gifFiles = new List<string>();
-
-                string[] files = Directory.GetFiles(pathToGifFiles);
-                foreach (string file in files)
+                if (pathToGifFiles != null)
                 {
-                    if (Path.GetExtension(file) == ".gif")
-                        gifFiles.Add(file);
-                }
+                    string[] files = Directory.GetFiles(pathToGifFiles);
+                    List<string> gifFiles = files.Where(file => Path.GetExtension(file) == ".gif").ToList();
 
-                if (gifFiles.Count <= 0)
-                {
+                    if (gifFiles.Count <= 0)
+                    {
+                        Console.Clear();
+                        Console.WriteLine(Resources.Main_Start_GIF_2_SVG_Converter);
+                        Console.WriteLine(Resources.Main_Start_No_gif_files_detected_in_provided_directory_try_again);
+                        Console.ReadKey();
+                        Start();
+                        Environment.Exit(0);
+                    }
+
                     Console.Clear();
-                    Console.WriteLine("########## GIF 2 SVG Converter ##########");
-                    Console.WriteLine("No .gif files detected in provided directory, try again");
-                    Console.ReadKey();
-                    Start();
-                    Environment.Exit(0);
+                    Console.WriteLine(Resources.Main_Start_GIF_2_SVG_Converter);
+                    Console.WriteLine(Resources.Main_Start_Enter_the_absolute_path_of_the_directory_your_svg_files_will_be_stored_in);
+                    string? pathToSvgFiles = Console.ReadLine();
+
+                    if (pathToSvgFiles != null)
+                    {
+                        if (!Directory.Exists(pathToSvgFiles))
+                            Directory.CreateDirectory(pathToSvgFiles);
+
+                        foreach (Converter converter in gifFiles.Select(file => new Converter(file, pathToSvgFiles + "\\" + Path.GetFileNameWithoutExtension(file) + ".svg"))) {}
+                    }
+                    else
+                    {
+                        Console.WriteLine(Resources.Main_Start_Error_Provided_path_was_null_the_program_will_now_exit_);
+                        Console.ReadKey();
+                        Environment.Exit(1);
+                    }
                 }
-
-                Console.Clear();
-                Console.WriteLine("########## GIF 2 SVG Converter ##########");
-                Console.WriteLine("Enter the absolute path of the directory your .svg files will be stored in");
-                string? pathToSvgFiles = Console.ReadLine();
-
-                if (!Directory.Exists(pathToSvgFiles))
-                    Directory.CreateDirectory(pathToSvgFiles);
-
-                foreach (string file in gifFiles)
+                else
                 {
-                    Converter converter = new Converter(file, pathToSvgFiles + "\\" + Path.GetFileNameWithoutExtension(file) + ".svg");
+                    Console.WriteLine(Resources.Main_Start_Error_Provided_path_was_null_the_program_will_now_exit_);
+                    Console.ReadKey();
+                    Environment.Exit(1);
                 }
             }
         }

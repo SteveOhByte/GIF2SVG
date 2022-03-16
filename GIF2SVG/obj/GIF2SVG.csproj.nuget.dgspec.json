@@ -51,9 +51,9 @@
               "target": "Package",
               "version": "[2.9.1, )"
             },
-            "System.Drawing.Common": {
+            "SixLabors.ImageSharp": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[2.1.0, )"
             },
             "Xabe.FFmpeg": {
               "target": "Package",

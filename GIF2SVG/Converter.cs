@@ -1,11 +1,9 @@
-﻿using ImageProcessor;
-using System;
-using System.Diagnostics;
-using System.Drawing;
+﻿using System.Diagnostics;
 using System.Globalization;
-using System.IO;
-using System.Reflection;
+using GIF2SVG.Properties;
+using SixLabors.ImageSharp;
 using Xabe.FFmpeg;
+// ReSharper disable ParameterHidesMember
 
 namespace GIF2SVG
 {
@@ -25,16 +23,16 @@ namespace GIF2SVG
             this.pathToSvg = pathToSvg;
 
             Console.Clear();
-            Console.WriteLine("########## GIF 2 SVG Converter ##########");
-            Console.WriteLine("Converting...");
+            Console.WriteLine(Resources.Main_Start_GIF_2_SVG_Converter);
+            Console.WriteLine(Resources.Converter_Converter_Converting);
 
             Convert(pathToGif, pathToSvg);
         }
 
-        public void Convert(string? pathToGif, string? pathToSvg)
+        private void Convert(string? pathToGif, string? pathToSvg)
         {
-            this.pathToGif = pathToGif;
-            this.pathToSvg = pathToSvg;
+            this.pathToGif = pathToGif!;
+            this.pathToSvg = pathToSvg!;
 
             Directory.CreateDirectory(tempFolder);
             // Extract ffmpeg resources
@@ -46,33 +44,25 @@ namespace GIF2SVG
 
             ExtractFramesAsync().Wait();
 
-            Console.WriteLine("Getting data...");
+            Console.WriteLine(Resources.Converter_Convert_Getting_data);
 
             List<string> frames = Directory.GetFiles(tempFolder + "\\" + Path.GetFileNameWithoutExtension(newPath)).ToList();
             numFrames = frames.Count;
 
             List<string> splitString = ffmpegOutput.Split("\n").ToList();
             List<string> pieces = new List<string>();
-            foreach (string line in splitString)
+            foreach (string streamLine in from line in splitString let i = splitString.IndexOf(line) where line.StartsWith("Input #") select splitString[i + 2])
             {
-                int i = splitString.IndexOf(line);
-                if (line.StartsWith("Input #")) 
-                {
-                    string streamLine = splitString[i + 2];
-                    pieces = streamLine.Split(",").ToList();
+                pieces = streamLine.Split(",").ToList();
 
-                    break;
-                }
+                break;
             }
 
             string fps = string.Empty;
-            foreach (string piece in pieces)
+            foreach (string piece in pieces.Where(piece => piece.Contains("fps")))
             {
-                if (piece.Contains("fps"))
-                {
-                    fps = piece.Split(" ").ToList()[1];
-                    break;
-                }
+                fps = piece.Split(" ").ToList()[1];
+                break;
             }
 
             ffps = float.Parse(fps, CultureInfo.InvariantCulture.NumberFormat);
@@ -85,7 +75,7 @@ namespace GIF2SVG
 
         private async Task ExtractFramesAsync()
         {
-            Console.WriteLine("Extracting frames...");
+            Console.WriteLine(Resources.Converter_ExtractFramesAsync_Extracting_frames);
             File.Copy(pathToGif, newPath);
 
             string filenameNoExt = Path.GetFileNameWithoutExtension(newPath);
@@ -95,9 +85,9 @@ namespace GIF2SVG
 
             // Extract the .gif to the tempfolder
             FFmpeg.SetExecutablesPath(tempFolder);
-            Func<string, string> outputFileNameBuilder = (number) => { return "\"" + tempFolder + "\\" + filenameNoExt + "\\" + "frame" + number + ".png\""; };
+            Func<string, string> outputFileNameBuilder = (number) => "\"" + tempFolder + "\\" + filenameNoExt + "\\" + "frame" + number + ".png\"";
             IMediaInfo info = await FFmpeg.GetMediaInfo(pathToGif).ConfigureAwait(false);
-            IVideoStream videoStream = info.VideoStreams.First()?.SetCodec(VideoCodec.png);
+            IVideoStream videoStream = info.VideoStreams.First()?.SetCodec(VideoCodec.png) ?? throw new NullReferenceException();
 
             IConversion conversion = FFmpeg.Conversions.New();
             conversion.OnDataReceived += Conversion_OnDataReceived;
@@ -114,13 +104,13 @@ namespace GIF2SVG
 
         private void BuildSVG(List<string> frames)
         {
-            Image img = Image.FromFile(tempFolder + "\\" + Path.GetFileNameWithoutExtension(newPath) + "\\frame_001.png");
+            Image img = Image.Load(tempFolder + "\\" + Path.GetFileNameWithoutExtension(newPath) + "\\frame_001.png");
             int width = img.Width;
             int height = img.Height;
 
             string framesFolder = Path.GetFileNameWithoutExtension(pathToGif) + "Frames";
 
-            Console.WriteLine("Building SVG...");
+            Console.WriteLine(Resources.Converter_BuildSVG_Building_SVG);
             StreamWriter sw = File.CreateText(pathToSvg);
             sw.WriteLine("<svg version=\"1.1\" baseProfile=\"tiny\" id=\"svg-root\" width=\"" + width + "\" height=\"" + height + "\" viewBox=\"0 0 " + width + " " + height + "\"");
             sw.WriteLine("    xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">");
@@ -150,7 +140,7 @@ namespace GIF2SVG
             }
 
             Directory.Delete(tempFolder, true);
-            Console.WriteLine("Conversion Complete!");
+            Console.WriteLine(Resources.Converter_Cleanup_Conversion_Complete);
         }
     }
 }
