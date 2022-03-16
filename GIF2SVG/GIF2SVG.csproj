@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ImageProcessor" Version="2.9.1" />
     <PackageReference Include="SixLabors.ImageSharp" Version="2.1.0" />
     <PackageReference Include="Xabe.FFmpeg" Version="5.1.0" />
   </ItemGroup>

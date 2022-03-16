@@ -11,7 +11,8 @@ namespace GIF2SVG
     {
         private readonly string tempFolder = AppDomain.CurrentDomain.BaseDirectory + "\\temp";
 
-        private string pathToGif, pathToSvg, newPath;
+        private string pathToGif, pathToSvg;
+        private string? newPath;
         private string ffmpegOutput = string.Empty;
         private int numFrames = 0;
         private float ffps = 0f;

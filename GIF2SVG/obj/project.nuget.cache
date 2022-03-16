@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "8WrxHKnISsu97N4tAcytyvT/SfxbFkBKQZO/PPWfI6w6aZHz+C7Po6l/xbwT0qaH/oaw0uwDoHCGehbDVPG3Fg==",
+  "dgSpecHash": "wNxhqbnDh7kQhqxMAtf5VFUQnC/TMINIyzhfaQ/cwhx4vD5J/7nbVl4TVihuxDheDsaG/rlQ11c0qoisMhRO1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Owner\\Desktop\\Bugs Bunny's Pocket\\Active production\\GIF2SVG\\GIF2SVG\\GIF2SVG.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Owner\\.nuget\\packages\\imageprocessor\\2.9.1\\imageprocessor.2.9.1.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
@@ -46,16 +45,5 @@
     "C:\\Users\\Owner\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\xabe.ffmpeg\\5.1.0\\xabe.ffmpeg.5.1.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'ImageProcessor 2.9.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "ImageProcessor",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

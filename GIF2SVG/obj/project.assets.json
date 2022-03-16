@@ -2,15 +2,6 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "ImageProcessor/2.9.1": {
-        "type": "package",
-        "compile": {
-          "lib/net452/ImageProcessor.dll": {}
-        },
-        "runtime": {
-          "lib/net452/ImageProcessor.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -608,19 +599,6 @@
     }
   },
   "libraries": {
-    "ImageProcessor/2.9.1": {
-      "sha512": "QzYXsKGBdgAcxneFucxPcsMnCFr3VwZKZ09cPwVH6TzcgA2JWskfDPr3u6IyDsHRgX+Ju1rgQr+I2I5/wRbcog==",
-      "type": "package",
-      "path": "imageprocessor/2.9.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "imageprocessor.2.9.1.nupkg.sha512",
-        "imageprocessor.nuspec",
-        "lib/net452/ImageProcessor.dll",
-        "lib/net452/ImageProcessor.xml"
-      ]
-    },
     "Microsoft.CSharp/4.0.1": {
       "sha512": "17h8b5mXa87XYKrrVqdgZ38JefSUqLChUQpXgSnpzsM0nDOhE40FTeNWOJ/YmySGV6tG6T8+hjz6vxbknHJr6A==",
       "type": "package",
@@ -2859,7 +2837,6 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "ImageProcessor >= 2.9.1",
       "SixLabors.ImageSharp >= 2.1.0",
       "Xabe.FFmpeg >= 5.1.0"
     ]
@@ -2911,10 +2888,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "ImageProcessor": {
-            "target": "Package",
-            "version": "[2.9.1, )"
-          },
           "SixLabors.ImageSharp": {
             "target": "Package",
             "version": "[2.1.0, )"
@@ -2942,17 +2915,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200-preview.22055.15\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'ImageProcessor 2.9.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "ImageProcessor",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }
