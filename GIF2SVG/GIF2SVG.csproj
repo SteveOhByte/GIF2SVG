@@ -5,14 +5,15 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <FileVersion>1.0.0</FileVersion>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0</FileVersion>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
     <Title>GIF2SVG</Title>
     <Authors>SneakySteve</Authors>
     <Copyright>SneakySteve</Copyright>
     <PackageProjectUrl>https://github.com/SneakySteve01/GIF2SVG</PackageProjectUrl>
     <PackageLicenseUrl>https://choosealicense.com/licenses/gpl-3.0/</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/SneakySteve01/GIF2SVG</RepositoryUrl>
+    <ApplicationIcon>..\icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -42,6 +43,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\icon.ico">
+      <Link>icon.ico</Link>
+    </None>
+    <None Include="..\icon.png">
+      <Link>icon.png</Link>
+    </None>
   </ItemGroup>
 
 </Project>
