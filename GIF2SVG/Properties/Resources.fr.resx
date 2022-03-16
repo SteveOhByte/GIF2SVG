@@ -1,0 +1,59 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Main_Start_GIF_2_SVG_Converter" xml:space="preserve">
+        <value>########## GIF AU SVG Convertisseur ##########</value>
+    </data>
+    <data name="Main_Start_Multiple_gifs_conversion" xml:space="preserve">
+        <value>Conversion de plusieurs gifs</value>
+    </data>
+    <data name="Main_Start_Select_an_option" xml:space="preserve">
+        <value>Sélectionner une option</value>
+    </data>
+    <data name="Main_Start_Single_gif_conversion" xml:space="preserve">
+        <value>Conversion gif unique</value>
+    </data>
+    <data name="Main_Start_No_gif_files_detected_in_provided_directory_try_again" xml:space="preserve">
+        <value>Aucun fichier .gif détecté dans le répertoire fourni, réessayez</value>
+    </data>
+    <data name="Converter_Cleanup_Conversion_Complete" xml:space="preserve">
+        <value>Conversion Terminée !</value>
+    </data>
+    <data name="Converter_Converter_Converting" xml:space="preserve">
+        <value>Convertir</value>
+    </data>
+    <data name="Converter_Convert_Getting_data" xml:space="preserve">
+        <value>Obtenir des données...</value>
+    </data>
+    <data name="Converter_BuildSVG_Building_SVG" xml:space="preserve">
+        <value>Bâtiment SVG...</value>
+    </data>
+    <data name="Converter_ExtractFramesAsync_Extracting_frames" xml:space="preserve">
+        <value>Extraction des cadres...</value>
+    </data>
+    <data name="Main_Start_Enter_the_absolute_path_of_the_directory_your_gif_files_are_stored_in" xml:space="preserve">
+        <value>Entrez le chemin absolu du répertoire dans lequel vos fichiers .gif sont stockés</value>
+    </data>
+    <data name="Main_Start_Enter_the_absolute_path_of_the_directory_your_svg_files_will_be_stored_in" xml:space="preserve">
+        <value>Entrez le chemin absolu du répertoire dans lequel vos fichiers .svg seront stockés</value>
+    </data>
+    <data name="Main_Start_Enter_the_absolute_path_of_your_gif_file" xml:space="preserve">
+        <value>Entrez le chemin absolu de votre fichier .gif</value>
+    </data>
+    <data name="Main_Start_Enter_the_absolute_path_the_output_svg_file" xml:space="preserve">
+        <value>Entrez le chemin absolu du fichier .svg de sortie</value>
+    </data>
+    <data name="Main_Start_Error_Provided_path_was_null_the_program_will_now_exit_" xml:space="preserve">
+        <value>Erreur : Le chemin fourni était nul, le programme va maintenant se fermer.</value>
+    </data>
+</root>
