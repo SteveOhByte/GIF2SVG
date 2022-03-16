@@ -47,6 +47,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Packaging.Targets": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[0.1.220-*, )"
+            },
             "SixLabors.ImageSharp": {
               "target": "Package",
               "version": "[2.1.0, )"

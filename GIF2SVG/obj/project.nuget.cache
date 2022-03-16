@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wNxhqbnDh7kQhqxMAtf5VFUQnC/TMINIyzhfaQ/cwhx4vD5J/7nbVl4TVihuxDheDsaG/rlQ11c0qoisMhRO1Q==",
+  "dgSpecHash": "8Cd5xKV6hPOJ44A6vp+jvEA2ZYZGGAK6ja5kqnTfsFZ7uzappixeq00ixuKivBZieqpFNYdBoppOjTpuuXUyQw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Owner\\Desktop\\Bugs Bunny's Pocket\\Active production\\GIF2SVG\\GIF2SVG\\GIF2SVG.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,9 @@
     "C:\\Users\\Owner\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\packaging.targets\\0.1.220\\packaging.targets.0.1.220.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\sixlabors.imagesharp\\2.1.0\\sixlabors.imagesharp.2.1.0.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\system.diagnostics.debug\\4.0.11\\system.diagnostics.debug.4.0.11.nupkg.sha512",
     "C:\\Users\\Owner\\.nuget\\packages\\system.diagnostics.tools\\4.0.1\\system.diagnostics.tools.4.0.1.nupkg.sha512",
