@@ -18,3 +18,7 @@ This is accomplished with C# and FFmpeg and was done in the most basic of ways
  4. Once launched, select either single or multi-gif conversion using the **up**, **down**, and **enter** keys
  5. Provide the full path as requested by the instructions on-screen
  6. Collect your generated files
+
+<a href="https://www.flaticon.com/free-icons/svg" title="svg icons">Svg icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by deemakdaksina - Flaticon</a>
