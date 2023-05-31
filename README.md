@@ -13,7 +13,7 @@ This is accomplished with C# and FFmpeg and was done in the most basic of ways
 ### Installation & Usage:
 
  1. Download the latest version from [releases](https://github.com/SneakySteve01/GIF2SVG/releases)
- 2. Run **GIF2SVG_Installer.exe**
+ 2. Run **GIF2SVG Installer.exe**
  3. Follow the on-screen instructions to finish install.
  4. Once launched, select either single or multi-gif conversion using the **up**, **down**, and **enter** keys
  5. Provide the full path as requested by the instructions on-screen
